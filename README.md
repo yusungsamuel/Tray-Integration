@@ -99,14 +99,14 @@ If the version of Slack you are using is limited to 50 API calls per hour, this 
 ![fifo demo](fifo.png)
 ### Pros
 - A work-around for the API calls limitation to Slack
-- Messsge are still delivered in the order it was created
+- Messsges are still delivered in the order they were created
 
 ### Cons
 - Message will not be delivered instantly as it was created
 - Delay can be up to 72 seconds
 
 ## (6)Check the Result
-To ensure everything is working as it is expected, one can test the integration by creating a new opportunity in Salesforce. If everything goes as planned, a notification will be sent to the relevant channel and the notification should look like this.
+To ensure everything is working as expected, one can test the integration by creating a new opportunity in Salesforce. If everything goes as planned, a notification will be sent to the relevant channel and the notification should look like this.
 
 ![notification demo](slack-notification.png)
 
