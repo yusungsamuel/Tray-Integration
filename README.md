@@ -115,3 +115,12 @@ To ensure everything is working as it is expected, one can test the integration 
 - Slack Documentation: 
     - Posting Message: https://api.slack.com/methods/chat.postMessage#channels
     - Constructing an Attachment: https://api.slack.com/docs/message-attachments
+
+
+## (8) Conclusion
+This is a high level, general overview of the integration. Many of details could not be documented out without accessing the Tray platform. Integration process may also deviate based on the how the CRM (Salesforce) is built out. 
+
+Right now, the integration is designed for efficiency. Since the work being done for all three countries. Therefore, the one process can handle all three situation. If the three different country requires different process, additional steps may be necessary.
+
+Lastly, I can explain the integration in more detail with I have access to Salesforce and Tray. Please let me know if you have any questions.
+
