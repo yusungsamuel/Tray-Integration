@@ -93,7 +93,25 @@ Now that we have all we needed, we will format the data into the way the Slack A
      }
 ```
 
+## (5.5) Batching Up Messages 
+If the version of Slack you are using is limited to 50 API calls per hour, this additional step may potential solve the problem. Using the `Amazon Simple Queue Services`(SQS), messages will first be sent to the queue and be bundle in batch. Once every 72 seconds, the SQS will make an API call to the Slack API requesting multiple messages to be post in a single call. By using the First-In-First-Out queque type (FIFO Queues), the messages will still be delivered in the order it was created. 
+
+![fifo demo](fifo.png)
+### Pros
+- A work-around for the API calls limitation to Slack
+- Messsge are still delivered in the order it was created
+
+### Cons
+- Message will not be delivered instantly as it was created
+- Delay can be up to 72 seconds
+
 ## (6)Check the Result
 To ensure everything is working as it is expected, one can test the integration by creating a new opportunity in Salesforce. If everything goes as planned, a notification will be sent to the relevant channel and the notification should look like this.
 
 ![notification demo](slack-notification.png)
+
+## (7) Other Resources
+- Tray Workflow Overview: https://tray.io/documentation/platform/overview/
+- Slack Documentation: 
+    - Posting Message: https://api.slack.com/methods/chat.postMessage#channels
+    - Constructing an Attachment: https://api.slack.com/docs/message-attachments
